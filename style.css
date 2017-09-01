@@ -1,0 +1,64 @@
+
+/*    font-family: 'Quicksand', sans-serif;
+
+    font-family: 'Pacifico', cursive;
+*/
+body {
+		background: #2c3e50;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Quicksand',sans-serif;
+}
+.heading {
+	color : #fff;
+	text-align: center;
+}
+
+.quote-box {
+	width:450px;
+	height: auto;
+	background: #fff;
+	border-radius: 5px;
+}
+
+.quote-text { 
+	margin : 20px;
+ }
+
+.quote {
+		font-family: 'Quicksand',sans-serif;
+		font-weight: bold;
+		font-size: 1.75em;	
+}
+
+.quote-size {
+	font-weight: 500;
+	font-size: 2.0em;
+}
+
+.quote-author {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+.next-quote {
+	border-radius: 2px;
+	padding : 20px 40px 20px 40px;
+	color: #000;
+	background: #fff;
+	font-family: 'Quicksand',sans-serif;
+	cursor:pointer;
+}
+
+.next-quote:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+.quote-author {
+	font-family: 'Pacifico', cursive;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
