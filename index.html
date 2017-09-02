@@ -7,9 +7,10 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
+	<script src="bootStrap/js/jquery-3.2.1.min.js"></script>
 	<script src="bootStrap/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body id="body">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
@@ -21,12 +22,12 @@
 
 		<div class="row">
 			<div class="col-lg-4 col-lg-offset-4 quote-box">
-				<div class="quote-text">
+				<div class="quote-text" id="q-text">
 					<i class="fa fa-quote-left quote-size" aria-hidden="true"></i>
-					<span class="quote">dsfiohdsifidhfohoh dhyfiusd fuidsnds jdsif h dshfiu sd dhfui ds</span>
+					<span class="quote" id="quote-text">dsfiohdsifidhfohoh dhyfiusd fuidsnds jdsif h dshfiu sd dhfui ds</span>
 					<i class="fa fa-quote-right quote-size" aria-hidden="true"></i>
 				</div>
-				<div class="quote-author text-right">
+				<div class="quote-author color text-right">
 					-pablo
 				</div>
 			</div>		
@@ -34,11 +35,60 @@
 		<br><br>
 		<div class="row">
 			<div class="col-lg-2 col-lg-offset-5">
-				<strong><a class="next-quote text-center">New Quote</a></strong>
+				<strong><a class="next-quote text-center" id="next">New Quote</a></strong>
 			</div>
 		</div>
 
 
 	</div>
+	<script type="text/javascript">
+	
+$(document).ready(function() {
+	var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
+	
+ $.getJSON("https://talaikis.com/api/quotes/" , getQuote);
+
+ function getQuote(json){
+ 	var html = "";
+ 	var text = "";
+ 	var author = "";
+ 	var numRand = Math.floor(Math.random() * json.length);
+ 	var colRand = Math.floor(Math.random()*colors.length);
+
+ 	document.getElementById('body').style.background = colors[colRand];
+ 	
+ 	text = json[numRand]['quote'];
+ 	author = json[numRand]['author'];
+
+ 	html += "<div class='quote-text' id='q-text'><i class='fa fa-quote-left quote-size' aria-hidden='true'></i><span class='quote' id='quote-text'> " + text + "</span><i class='fa fa-quote-right quote-size' aria-hidden='true'></i></div>";
+ 	html += "<div class='quote-author text-right'> -"+author+"</div>";
+
+ 	$(".quote-box").html(html);
+ }
+  $("#next").on('click',function(){
+  	$.getJSON("https://talaikis.com/api/quotes/", function(json) {
+  	var html = "";
+ 	var text = "";
+ 	var author = "";
+ 	var numRand = Math.floor(Math.random() * json.length);
+ 	var colRand = Math.floor(Math.random()*colors.length);
+
+ 	document.getElementById('body').style.background = colors[colRand];
+	document.getElementById('body').style.color = colors[colRand];
+ 	 	
+
+ 	text = json[numRand]['quote'];
+ 	author = json[numRand]['author'];
+
+ 	html += "<div class='quote-text' id='q-text'><i class='fa fa-quote-left quote-size' aria-hidden='true'></i><span class='quote' id='quote-text'> " + text + "</span><i class='fa fa-quote-right quote-size' aria-hidden='true'></i></div>";
+ 	html += "<div class='quote-author text-right'> -"+author+"</div>";
+
+ 	$(".quote-box").html(html);
+  });
+});
+
+});
+
+</script>
 </body>
 </html>
