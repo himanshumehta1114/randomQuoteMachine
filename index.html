@@ -24,11 +24,11 @@
 			<div class="col-lg-4 col-lg-offset-4 quote-box">
 				<div class="quote-text" id="q-text">
 					<i class="fa fa-quote-left quote-size" aria-hidden="true"></i>
-					<span class="quote" id="quote-text">dsfiohdsifidhfohoh dhyfiusd fuidsnds jdsif h dshfiu sd dhfui ds</span>
+					<span class="quote" id="quote-text"></span>
 					<i class="fa fa-quote-right quote-size" aria-hidden="true"></i>
 				</div>
 				<div class="quote-author color text-right">
-					-pablo
+					-
 				</div>
 			</div>		
 		</div>
@@ -56,7 +56,8 @@ $(document).ready(function() {
  	var colRand = Math.floor(Math.random()*colors.length);
 
  	document.getElementById('body').style.background = colors[colRand];
- 	
+ 	document.getElementById('body').style.color = colors[colRand];
+
  	text = json[numRand]['quote'];
  	author = json[numRand]['author'];
 
