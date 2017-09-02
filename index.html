@@ -34,8 +34,10 @@
 		</div>
 		<br><br>
 		<div class="row">
-			<div class="col-lg-2 col-lg-offset-5">
-				<strong><a class="next-quote text-center" id="next">New Quote</a></strong>
+			<div class="col-lg-4 col-lg-offset-4">
+				<a class="option-box" id="twitter"><i class="fa fa-twitter" aria-hidden="true"></i>
+				<strong><a class="next-quote text-right option-box" id="next">New Quote</a></strong>
+	
 			</div>
 		</div>
 
@@ -76,7 +78,9 @@ $(document).ready(function() {
 
  	document.getElementById('body').style.background = colors[colRand];
 	document.getElementById('body').style.color = colors[colRand];
- 	 	
+	document.getElementById('twitter').style.color = colors[colRand];
+ 	document.getElementById('next').style.color = colors[colRand];
+ 	
 
  	text = json[numRand]['quote'];
  	author = json[numRand]['author'];

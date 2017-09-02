@@ -17,12 +17,28 @@ h1 {
 	text-align: center;
 }
 
+.share {
+	color: #fff;
+	font-size: 2.0em;
+}
+
+.share-fa {
+	font-size: 1.5em;
+}
 
 .quote-box {
 	width:450px;
 	height: auto;
 	background: #fff;
 	border-radius: 5px;
+}
+
+.option-box {
+	width:450px;
+	height: auto;
+	background: #fff;
+	border-radius: 5px;
+	
 }
 
 .quote-text { 
@@ -34,6 +50,7 @@ h1 {
 		font-weight: bold;
 		font-size: 1.75em;	
 }
+
 
 .quote-size {
 	font-weight: 500;
@@ -47,10 +64,19 @@ h1 {
 
 .next-quote {
 	border-radius: 2px;
-	padding : 20px 40px 20px 40px;
+	padding : 34px 40px 30px 40px;
 	color: #000;
 	background: #fff;
 	font-family: 'Quicksand',sans-serif;
+	cursor:pointer;
+}
+
+#twitter {
+	border-radius: 2px;
+	padding: 10px 10px 17px 10px;
+	margin-right: 150px;
+	color: #000;
+	font-size: 45px;
 	cursor:pointer;
 }
 
