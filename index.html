@@ -34,8 +34,8 @@
 		</div>
 		<br><br>
 		<div class="row">
-			<div class="col-lg-4 col-lg-offset-4">
-				<a class="option-box" id="twitter"><i class="fa fa-twitter" aria-hidden="true"></i>
+			<div class="col-lg-4 col-lg-offset-4 option">
+				<a class="option-box" id="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i>
 				<strong><a class="next-quote text-right option-box" id="next">New Quote</a></strong>
 	
 			</div>
@@ -57,17 +57,22 @@ $(document).ready(function() {
  	var numRand = Math.floor(Math.random() * json.length);
  	var colRand = Math.floor(Math.random()*colors.length);
 
+
  	document.getElementById('body').style.background = colors[colRand];
- 	document.getElementById('body').style.color = colors[colRand];
+	document.getElementById('body').style.color = colors[colRand];
+	document.getElementById('twitter').style.color = colors[colRand];
+ 	document.getElementById('next').style.color = colors[colRand];
 
  	text = json[numRand]['quote'];
  	author = json[numRand]['author'];
 
+ 	$("#twitter").attr('href','https://twitter.com/intent/tweet?text=' + text + '--'+ author);
  	html += "<div class='quote-text' id='q-text'><i class='fa fa-quote-left quote-size' aria-hidden='true'></i><span class='quote' id='quote-text'> " + text + "</span><i class='fa fa-quote-right quote-size' aria-hidden='true'></i></div>";
  	html += "<div class='quote-author text-right'> -"+author+"</div>";
 
  	$(".quote-box").html(html);
  }
+
   $("#next").on('click',function(){
   	$.getJSON("https://talaikis.com/api/quotes/", function(json) {
   	var html = "";
@@ -79,12 +84,12 @@ $(document).ready(function() {
  	document.getElementById('body').style.background = colors[colRand];
 	document.getElementById('body').style.color = colors[colRand];
 	document.getElementById('twitter').style.color = colors[colRand];
- 	document.getElementById('next').style.color = colors[colRand];
- 	
+ 	document.getElementById('next').style.color = colors[colRand];	
 
  	text = json[numRand]['quote'];
  	author = json[numRand]['author'];
-
+ 	$("#twitter").attr('href','https://twitter.com/intent/tweet?text=' + text + '--'+ author);
+ 	
  	html += "<div class='quote-text' id='q-text'><i class='fa fa-quote-left quote-size' aria-hidden='true'></i><span class='quote' id='quote-text'> " + text + "</span><i class='fa fa-quote-right quote-size' aria-hidden='true'></i></div>";
  	html += "<div class='quote-author text-right'> -"+author+"</div>";
 
